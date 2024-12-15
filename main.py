@@ -1,5 +1,6 @@
 from array import Array
 from linked_list import LinkedList
+from stack import StackArray, StackLinkedList
 
 
 def test_linked_list():
@@ -167,7 +168,90 @@ def dynamic_array_test():
     print("Dynamic array test completed.\n")
 
 
+def test_stack_array():
+    print("Testing StackArray...")
+
+    # test LIFO
+    print("\nTest LIFO:")
+    stack = StackArray(kind="LIFO")
+    # import ipdb; ipdb.set_trace() c s n q
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+    stack.display()  # expected: Stack (lifo): 10 20 30
+    print(stack.pop())  # expected: 30
+    stack.display()  # expected: Stack (lifo): 10 20
+    print("PEEK:", stack.peek())  # expected: 20
+
+    # test FIFO
+    print("\nTest FIFO:")
+    stack = StackArray(kind="FIFO")
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+    stack.display()  # expected: Stack (fifo): 30 20 10
+    print(stack.pop())  # expected: 10
+    stack.display()  # expected: Stack (fifo): 30 20
+    print("PEEK:", stack.peek())  # expected: 20
+
+    # test PRIORITY
+    print("\nTest PRIORITY:")
+    stack = StackArray(kind="PRIORITY")
+    stack.push(50)
+    stack.push(30)
+    stack.push(40)
+    stack.push(20)
+    stack.display()  # expected: Stack (priority): 20 30 40 50
+    print(stack.pop())  # expected: 20
+    stack.display()  # expected: Stack (priority): 30 40 50
+    print("PEEK:", stack.peek())  # expected: 30
+
+    print("\nStackArray tests completed!")
+
+
+def test_stack_linked_list():
+    print("\nTesting StackLinkedList...")
+
+    # test LIFO
+    print("\nTest LIFO:")
+    stack = StackLinkedList(kind="LIFO")
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+    stack.display()  # expected: Stack (lifo): 30 -> 20 -> 10 -> None
+    print(stack.pop())  # expected: 30
+    stack.display()  # expected: Stack (lifo): 20 -> 10 -> None
+    print("PEEK:", stack.peek())  # expected: 20
+
+    # test FIFO
+    print("\nTest FIFO:")
+    stack = StackLinkedList(kind="FIFO")
+    stack.push(10)
+    stack.push(20)
+    stack.push(30)
+    stack.display()  # expected: Stack (fifo): 10 -> 20 -> 30 -> None
+    print(stack.pop())  # expected: 10
+    stack.display()  # expected: Stack (fifo): 20 -> 30 -> None
+    print("PEEK:", stack.peek())  # expected: 20
+
+    # test PRIORITY
+    print("\nTest PRIORITY:")
+    stack = StackLinkedList(kind="PRIORITY")
+    stack.push(50)
+    stack.push(30)
+    stack.push(40)
+    stack.push(20)
+    stack.display()  # expected: Stack (priority): 20 -> 30 -> 40 -> 50 -> None
+    print(stack.pop())  # expected: 20
+    stack.display()  # expected: Stack (priority): 30 -> 40 -> 50 -> None
+    print("PEEK:", stack.peek())  # expected: 30
+
+    print("\nStackLinkedList tests completed!")
+
+
 if __name__ == "__main__":
-    static_array_test()  # test static array
-    dynamic_array_test()  # test dynamic array
-    test_linked_list()  # test linked list
+    # static_array_test()  # test static array
+    # dynamic_array_test()  # test dynamic array
+    # test_linked_list()  # test linked list
+    test_stack_array()  # test stack array
+    test_stack_linked_list()  # test stack linked list
