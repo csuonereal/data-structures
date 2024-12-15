@@ -24,6 +24,10 @@ This repository contains basic Python implementations of fundamental data struct
 - **Binary Search Tree (BST)**: Sorted binary tree for efficient searching.
 - **AVL Tree**: Self-balancing binary search tree.
 
+### 6. Hash Tables
+- **Hash Table with Chaining**: Collision handling using linked lists.
+- **Hash Table with Open Addressing**: Collision handling using linear probing.
+
 ## Contributing
 
 Contributions are welcome! You can help by:
