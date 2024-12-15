@@ -2,7 +2,7 @@
 
 This repository contains basic Python implementations of fundamental data structures. The focus is on simplicity and clarity, covering essential types.
 
-## Implemented Data Structures
+## Implemented/Will Be Implemented Data Structures Data Structures
 
 ### 1. Arrays
 - **Static Array**: Fixed-size array with basic operations.
